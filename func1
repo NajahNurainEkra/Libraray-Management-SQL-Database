@@ -1,0 +1,9 @@
+create or replace function pricefind(bid book_details.book_id%type)
+return number
+is
+v_price book_details.price%type;
+begin
+select count(price) into v_price from book_details@site_link where book_id=bid;
+return v_price ;
+end;
+/

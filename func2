@@ -1,0 +1,12 @@
+create or replace function updatebooks(bid staff.book_id%type)
+return number
+is
+v_id1 staff.book_id%type;
+begin
+ select book_id into v_id1 from staff@site_link where book_id=bid;
+return v_id1 ;
+end;
+/
+
+
+
